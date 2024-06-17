@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarkNet Transaction Explainer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1a202c;
+      color: #e2e8f0;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid #e2e8f0;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      margin: auto;
+    }
+    button#explain-btn {
+    background-color: #008CBA; 
+    color: black; 
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+  <div class="container mx-auto max-w-2xl p-4">
+    <h1 class="text-3xl font-bold mb-6 text-center text-teal-400">ClearTxn</h1>
+    <div class="bg-gray-800 p-6 rounded shadow-md">
+      <label for="transaction-hash" class="block text-sm font-medium text-gray-400">Transaction Hash:</label>
+      <input type="text" id="transaction-hash" class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 text-white sm:text-sm" placeholder="Enter transaction hash">
+      <button id="explain-btn" class="mt-4 w-full bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700">Explain Transaction</button>
+    </div>
+    <div id="result" class="mt-6"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
