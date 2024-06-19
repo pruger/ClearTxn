@@ -1,5 +1,9 @@
+/* Existing Styles */
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -14,14 +18,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
 .App-link {
@@ -37,7 +34,69 @@
   }
 }
 
-/* transactionalModal*/
+.App-main {
+  flex: 1;
+  padding: 20px;
+  background: #1a202c;
+}
+
+.App-footer {
+  padding: 10px;
+  background: #282c34;
+  color: white;
+  text-align: center;
+  margin-top: auto; /* Ensure footer stays at the bottom */
+}
+
+/* New Styles for the updated layout */
+.app-headline {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.app-summary {
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clear-txn-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.transaction-explainer {
+  background: #2d3748;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+.result-section {
+  margin-top: 20px;
+}
+
+.transaction-data-section {
+  margin-top: 40px;
+}
+
+.transaction-data-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Modal styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -71,6 +130,7 @@
   border-radius: 4px;
   overflow: auto;
   max-height: 400px;
+  text-align: left; /* Ensure text is left-aligned */
 }
 
 .modal-actions {

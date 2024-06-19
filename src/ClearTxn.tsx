@@ -84,10 +84,9 @@ const ClearTxn: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="container mx-auto max-w-2xl p-4">
-        <h1 className="text-3xl font-bold mb-6 text-center text-teal-400">ClearTxn</h1>
-        <div className="bg-gray-800 p-6 rounded shadow-md mb-4">
+    <div className="clear-txn-container">
+      <div className="transaction-explainer">
+        <div className="input-section">
           <label htmlFor="transaction-hash" className="block text-sm font-medium text-gray-400">Transaction Hash:</label>
           <input
             type="text"
@@ -105,26 +104,28 @@ const ClearTxn: React.FC = () => {
             {loading ? 'Explaining...' : 'Explain Transaction'}
           </button>
         </div>
-        <div className="bg-gray-800 p-6 rounded shadow-md mb-4">
-          <h2 className="text-xl font-bold text-teal-400">Transaction Data</h2>
+        <div id="result" className="result-section mt-6" dangerouslySetInnerHTML={{ __html: result }}></div>
+      </div>
+      <div className="transaction-data-section mt-8">
+        <h2 className="text-xl font-bold text-teal-400">Example Transactions</h2>
+        <div className="transaction-data-buttons mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {Object.keys(jsonFiles).map((fileName, index) => (
             <button
               key={index}
               onClick={() => handleOpenModal(jsonFiles[fileName])}
-              className="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
             >
-              {fileName}
+            {fileName.slice(0, -5)}
             </button>
           ))}
         </div>
-        <div id="result" className="mt-6" dangerouslySetInnerHTML={{ __html: result }}></div>
-        <TransactionModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          transactionData={transactionData}
-          onCopy={handleCopyData}
-        />
       </div>
+      <TransactionModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        transactionData={transactionData}
+        onCopy={handleCopyData}
+      />
     </div>
   );
 };
