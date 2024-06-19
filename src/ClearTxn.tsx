@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TransactionModal from './TransactionModal';
-import './App.css'; // Ensure the App.css is imported
+import './App.css';
 
 declare const require: {
   context: (path: string, deep?: boolean, filter?: RegExp) => {
@@ -88,13 +88,14 @@ const ClearTxn: React.FC = () => {
       <div className="transaction-explainer">
         <div className="input-section">
           <label htmlFor="transaction-hash" className="block text-sm font-medium text-gray-400">Transaction Hash:</label>
-          <input
-            type="text"
+          <textarea
             id="transaction-hash"
             value={transactionHash}
             onChange={(e) => setTransactionHash(e.target.value)}
             className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 text-white sm:text-sm"
             placeholder="Enter transaction hash"
+            rows={20}
+            style={{ resize: 'none' }}
           />
           <button
             onClick={explainTransaction}
@@ -113,7 +114,7 @@ const ClearTxn: React.FC = () => {
             <button
               key={index}
               onClick={() => handleOpenModal(jsonFiles[fileName])}
-              className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              className="bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700"
             >
               {fileName.slice(0, -5)}
             </button>
