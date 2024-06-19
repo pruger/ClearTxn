@@ -21,7 +21,7 @@ const TransactionModal: React.FC<TransactionModalProps> = ({ isOpen, onClose, tr
           {JSON.stringify(transactionData, null, 2)}
         </SyntaxHighlighter>
         <div className="modal-actions">
-          <button onClick={onCopy} className="modal-button copy-button">Copy Data</button>
+          <button onClick={onCopy} className="modal-button copy-button">ClearTxn!</button>
           <button onClick={onClose} className="modal-button close-button">Close</button>
         </div>
       </div>

@@ -45,20 +45,19 @@
   background: #282c34;
   color: white;
   text-align: center;
-  margin-top: auto; /* Ensure footer stays at the bottom */
+  margin-top: auto; 
 }
 
-/* New Styles for the updated layout */
 .app-headline {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .app-summary {
-  font-size: 1rem;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 50px;
   max-width: 600px;
   text-align: center;
   margin-left: auto;
@@ -130,7 +129,7 @@
   border-radius: 4px;
   overflow: auto;
   max-height: 400px;
-  text-align: left; /* Ensure text is left-aligned */
+  text-align: left;
 }
 
 .modal-actions {
@@ -149,7 +148,7 @@
 }
 
 .copy-button {
-  background: #38a169;
+  background: #3895a1;
 }
 
 .close-button {
