@@ -1,142 +1,50 @@
-[
-    {
-      "name": "0",
-      "type": "",
-      "value": "\"0x02\""
+{
+    "jsonrpc": "2.0",
+    "method": "starknet_simulateTransactions",
+    "params": {
+        "block_id": {
+            "block_number": 74497
+        },
+        "transactions": [
+            {
+                "type": "INVOKE",
+                "version": "0x3",
+                "sender_address": "0x027734cac5acd66a10b583878e79adbd300e0645fc96d33ae03e0d74f948e025",
+                "calldata": [
+                    "0x1",
+                    "0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+                    "0x83afd3f4caedc6eebf44246fe54e38c95e3179a5ec9ea81740eca5b482d12e",
+                    "0x3",
+                    "0x27734cac5acd66a10b583878e79adbd300e0645fc96d33ae03e0d74f948e025",
+                    "0x2710",
+                    "0x0"
+                ],
+                "signature": [
+                    "0x1",
+                    "0x33a877fc3a973902cd7bfa8770c836125784a5db4cf53b3e049b9800e87a8a3",
+                    "0x37ea9e5b5d7486c5abd780632ff9a13830ec02c65a6c126fc243bd552670755"
+                ],
+                "nonce": "0x3",
+                "tip": "0x0",
+                "paymaster_data": [],
+                "account_deployment_data": [],
+                "nonce_data_availability_mode": "L2",
+                "fee_data_availability_mode": "L2",
+                "resource_bounds": {
+                    "l1_gas": {
+                        "max_amount": "0x0",
+                        "max_price_per_unit": "0x0"
+                    },
+                    "l2_gas": {
+                        "max_amount": "0x0",
+                        "max_price_per_unit": "0x0"
+                    }
+                }
+            }
+        ],
+        "simulation_flags": [
+            "SKIP_VALIDATE"
+        ]
     },
-    {
-      "name": "1",
-      "type": "",
-      "value": "\"0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7\""
-    },
-    {
-      "name": "2",
-      "type": "",
-      "value": "\"0x0219209e083275171774dab1df80982e9df2096516f06319c5c6d71ae0a8480c\""
-    },
-    {
-      "name": "3",
-      "type": "",
-      "value": "\"0x03\""
-    },
-    {
-      "name": "4",
-      "type": "",
-      "value": "\"0x04270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f\""
-    },
-    {
-      "name": "5",
-      "type": "",
-      "value": "\"0xd529ae9e860000\""
-    },
-    {
-      "name": "6",
-      "type": "",
-      "value": "\"0x00\""
-    },
-    {
-      "name": "7",
-      "type": "",
-      "value": "\"0x04270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f\""
-    },
-    {
-      "name": "8",
-      "type": "",
-      "value": "\"0x01171593aa5bdadda4d6b0efde6cc94ee7649c3163d5efeb19da6c16d63a2a63\""
-    },
-    {
-      "name": "9",
-      "type": "",
-      "value": "\"0x12\""
-    },
-    {
-      "name": "10",
-      "type": "",
-      "value": "\"0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7\""
-    },
-    {
-      "name": "11",
-      "type": "",
-      "value": "\"0xd529ae9e860000\""
-    },
-    {
-      "name": "12",
-      "type": "",
-      "value": "\"0x00\""
-    },
-    {
-      "name": "13",
-      "type": "",
-      "value": "\"0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d\""
-    },
-    {
-      "name": "14",
-      "type": "",
-      "value": "\"0x0f971b169551e9be0e\""
-    },
-    {
-      "name": "15",
-      "type": "",
-      "value": "\"0x00\""
-    },
-    {
-      "name": "16",
-      "type": "",
-      "value": "\"0x0db82c5150339a7e49\""
-    },
-    {
-      "name": "17",
-      "type": "",
-      "value": "\"0x00\""
-    },
-    {
-      "name": "18",
-      "type": "",
-      "value": "\"0x03a85970bb4f59e5cd7682fee66edebf607f8b30029fbd689255675ea33022aa\""
-    },
-    {
-      "name": "19",
-      "type": "",
-      "value": "\"0x00\""
-    },
-    {
-      "name": "20",
-      "type": "",
-      "value": "\"0x00\""
-    },
-    {
-      "name": "21",
-      "type": "",
-      "value": "\"0x01\""
-    },
-    {
-      "name": "22",
-      "type": "",
-      "value": "\"0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7\""
-    },
-    {
-      "name": "23",
-      "type": "",
-      "value": "\"0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d\""
-    },
-    {
-      "name": "24",
-      "type": "",
-      "value": "\"0x049ff5b3a7d38e2b50198f408fa8281635b5bc81ee49ab87ac36c8324c214427\""
-    },
-    {
-      "name": "25",
-      "type": "",
-      "value": "\"0x64\""
-    },
-    {
-      "name": "26",
-      "type": "",
-      "value": "\"0x01\""
-    },
-    {
-      "name": "27",
-      "type": "",
-      "value": "\"0x068400056dccee818caa7e8a2c305f9a60d255145bac22d6c5c9bf9e2e046b71\""
-    }
-  ]
+    "id": 1
+}
