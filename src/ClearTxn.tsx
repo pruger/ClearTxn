@@ -115,7 +115,7 @@ const ClearTxn: React.FC = () => {
               onClick={() => handleOpenModal(jsonFiles[fileName])}
               className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
             >
-            {fileName.slice(0, -5)}
+              {fileName.slice(0, -5)}
             </button>
           ))}
         </div>
