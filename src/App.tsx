@@ -13,7 +13,7 @@ const App: React.FC = () => {
         <ClearTxn />
       </main>
       <footer className="App-footer">
-        <p>&copy; 2024 ClearTxn. Made for 🚀 StackHack 2024</p>
+        <p>Made for 🚀 StackHack 2024</p>
       </footer>
     </div>
   );
