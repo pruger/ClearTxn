@@ -1,0 +1,45 @@
+{
+    "jsonrpc": "2.0",
+    "method": "starknet_simulateTransactions",
+    "params": {
+        "block_id": {
+            "block_number": 651039
+        },
+        "transactions": [
+            {
+                "type": "INVOKE",
+                "version": "0x3",
+                "sender_address": "0x0656482b22356bccda7cf0d46d3a14ca9e7debe1d38417ba65de5a1bf8d35523",
+                "calldata": [
+                    "0x01",
+                    "0x04c0a5193d58f74fbace4b74dcf65481e734ed1714121bdc571da345540efa05",
+                    "0x015511cc3694f64379908437d6d64458dc76d02482052bfb8a5b33a72c054c77",
+                    "0x02",
+                    "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+                    "0x022b1c8c1227a00000"
+                ],
+                "signature": [],
+                "nonce": "0x73",
+                "tip": "0x0",
+                "paymaster_data": [],
+                "account_deployment_data": [],
+                "nonce_data_availability_mode": "L2",
+                "fee_data_availability_mode": "L2",
+                "resource_bounds": {
+                    "l1_gas": {
+                        "max_amount": "0x0",
+                        "max_price_per_unit": "0x0"
+                    },
+                    "l2_gas": {
+                        "max_amount": "0x0",
+                        "max_price_per_unit": "0x0"
+                    }
+                }
+            }
+        ],
+        "simulation_flags": [
+            "SKIP_VALIDATE"
+        ]
+    },
+    "id": 1
+}
