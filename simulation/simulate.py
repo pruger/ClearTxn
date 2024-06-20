@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from typing import TypedDict
 
 import requests
@@ -100,7 +101,7 @@ def parse_info(info: Info):
                     if item["type"] == "function":
                         if test(item["name"], hash_to_find):
                             return item["name"].rsplit("::", 1)[-1]
-        print("not found", hash_to_find)
+        print("not found", hash_to_find, file=sys.stderr)
         return None
 
     def get_event_name(abi, hash_to_find: str) -> str:
