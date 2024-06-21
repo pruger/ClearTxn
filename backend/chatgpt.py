@@ -11,7 +11,7 @@ def get_chatgpt_response(prompt, model="gpt-4"):
         "model": model,
         "messages": [
             {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": prompt}
+            {"role": "user", "content": str(prompt)}
         ],
         "max_tokens": 150
     }
