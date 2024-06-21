@@ -19,6 +19,7 @@ def data_endpoint():
                 "id": 1,
             }
         )
+        print(simulation_data)
         gpt_response = chatgpt.get_chatgpt_response(simulation_data)
         response = {"message": str(gpt_response)}
         return jsonify(response), 200

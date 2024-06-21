@@ -1,3 +1,4 @@
 class_details
 .venv
 venv
+__pycache__

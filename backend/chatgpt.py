@@ -9,6 +9,7 @@ def get_chatgpt_response(transaction_data, model="gpt-4"):
     }
     prompt = f"""I did run a transaction on starknet. 
     Can you give me a really short idea of what this transaction for example could have done with a concrete example. 
+    Keep your answer very short.
     Do not explain the events in detail!
     This is the output of the transaction:
     
@@ -17,7 +18,7 @@ def get_chatgpt_response(transaction_data, model="gpt-4"):
     data = {
         "model": model,
         "messages": [
-            {"role": "system", "content": "You are a starknet transaction analyser. Helping users understand what a transaction does on starknet."},
+            {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": str(prompt)}
         ],
         "max_tokens": 150
