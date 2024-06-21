@@ -87,12 +87,12 @@ const ClearTxn: React.FC = () => {
             onChange={(e) => setTransaction(e.target.value)}
             className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 text-white sm:text-sm"
             placeholder="Enter transaction"
-            rows={20}
+            rows={15}
             style={{ resize: 'none' }}
           />
           <button
             onClick={explainTransaction}
-            className="mt-4 w-full bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700"
+            className="mt-4 w-full bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 font-semibold"
             disabled={loading}
           >
             {loading ? 'Explaining...' : 'Explain Transaction'}
