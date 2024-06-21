@@ -17,10 +17,10 @@ def get_chatgpt_response(transaction_data, model="gpt-4"):
     data = {
         "model": model,
         "messages": [
-            {"role": "system", "content": "You are a starknet transaction analyser. Helping users understand what a transaction does on starknet before its getting executed."},
+            {"role": "system", "content": "You are a starknet transaction analyser. Helping users understand what a transaction does on starknet."},
             {"role": "user", "content": str(prompt)}
         ],
-        "max_tokens": 10
+        "max_tokens": 150
     }
     
     response = requests.post(url, headers=headers, json=data)
