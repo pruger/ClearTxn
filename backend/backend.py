@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 import simulate
 import chatgpt
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/simulate", methods=["POST"])
@@ -17,8 +19,8 @@ def data_endpoint():
                 "id": 1,
             }
         )
-        gpt_response = chatgpt.get_chatgpt_response(simulation_data)
-        response = {"message": gpt_response}
+        # gpt_response = chatgpt.get_chatgpt_response(simulation_data)
+        response = {"message": str(simulation_data)}
         return jsonify(response), 200
     else:
         response = {"message": "Request was not JSON"}
