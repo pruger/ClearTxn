@@ -17,7 +17,7 @@ The backend uses the starknet_simulateTransactions method to simulate the transa
 
 The backend extracts these function calls and events, then uses the Voyager API to fetch the ABIs (Application Binary Interfaces) for the class hashes. From these ABIs, it retrieves the function and event names. For certain events, additional information is extracted as well.
 
-All the gathered information is then formatted into a prompt for a Language Learning Model (LLM). The LLM is tasked with translating this technical transaction data into a human-readable explanation for the user.
+All the gathered information is then formatted into a prompt for a Large Language Model (LLM). The LLM is tasked with translating this technical transaction data into a human-readable explanation for the user.
 
 Finally, the backend sends this explanation back to the frontend, where it is displayed to the user.
 
