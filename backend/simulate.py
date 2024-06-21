@@ -37,7 +37,7 @@ def _get_abi(class_hash: str) -> dict:
         return data.get("abi")
 
     url = f"https://api.voyager.online/beta/classes/{class_hash}"
-    headers = {"accept": "application/json", "x-api-key": os.environ.get("API_KEY")}
+    headers = {"accept": "application/json", "x-api-key": os.environ.get("VOYAGER_API_KEY")}
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     os.makedirs("class_details", exist_ok=True)

@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import simulate
+import chatgpt
 
 app = Flask(__name__)
 
@@ -16,8 +17,8 @@ def data_endpoint():
                 "id": 1,
             }
         )
-        print("data", simulation_data)
-        response = {"message": "JSON received!", "received_data": data}
+        gpt_response = chatgpt.get_chatgpt_response(simulation_data)
+        response = {"message": gpt_response}
         return jsonify(response), 200
     else:
         response = {"message": "Request was not JSON"}
