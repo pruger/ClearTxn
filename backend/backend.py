@@ -8,7 +8,15 @@ app = Flask(__name__)
 def data_endpoint():
     if request.is_json:
         data = request.get_json()
-        # Process the JSON data here
+        simulation_data = simulate.get_information(
+            {
+                "jsonrpc": "2.0",
+                "method": "starknet_simulateTransactions",
+                "params": data,
+                "id": 1,
+            }
+        )
+        print("data", simulation_data)
         response = {"message": "JSON received!", "received_data": data}
         return jsonify(response), 200
     else:

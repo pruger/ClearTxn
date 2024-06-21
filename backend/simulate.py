@@ -7,7 +7,7 @@ import requests
 from Crypto.Hash import keccak
 
 
-def starknet_keccak(data: bytes) -> bytes:
+def _starknet_keccak(data: bytes) -> bytes:
     """
     A variant of eth-keccak that computes a value that fits in a Starknet field element.
     """
@@ -17,7 +17,7 @@ def starknet_keccak(data: bytes) -> bytes:
     return masked.to_bytes(length=32, byteorder="big")
 
 
-def get_abi(class_hash: str) -> dict:
+def _get_abi(class_hash: str) -> dict:
     """
     Retrieve the Application Binary Interface (ABI) for a given class hash.
 
@@ -47,7 +47,7 @@ def get_abi(class_hash: str) -> dict:
     return res.get("abi")
 
 
-def simulate(transaction):
+def _simulate(transaction):
     url = "https://free-rpc.nethermind.io/mainnet-juno/"
     headers = {"Content-Type": "application/json"}
     response = requests.post(url, headers=headers, data=json.dumps(transaction))
@@ -64,7 +64,7 @@ class Info(TypedDict):
     events: list
 
 
-def extract_info(simulation_data) -> list:
+def _extract_info(simulation_data) -> list:
     events: list[Info] = []
 
     def get_events_from_call(events, simulation_data):
@@ -82,11 +82,11 @@ def extract_info(simulation_data) -> list:
     return events
 
 
-def parse_info(info: Info):
+def _parse_info(info: Info):
 
     def test(name: str, hash_to_find: str):
         name = name.rsplit("::", 1)[-1]
-        hash = "0x" + starknet_keccak(name.encode()).hex().lstrip("0")
+        hash = "0x" + _starknet_keccak(name.encode()).hex().lstrip("0")
         return hash == hash_to_find
 
     def get_function_name(abi, hash_to_find: str) -> str:
@@ -111,7 +111,7 @@ def parse_info(info: Info):
                     return abi_entry["name"].rsplit("::", 1)[-1]
         return None
 
-    abi = get_abi(info["class_hash"])
+    abi = _get_abi(info["class_hash"])
     if abi is None:
         return
     result = {}
@@ -124,16 +124,16 @@ def parse_info(info: Info):
 
 
 def get_information(transaction):
-    simulation_data = simulate(transaction)
+    simulation_data = _simulate(transaction)
     if simulation_data.get("error"):
         return simulation_data.get("error")["data"]["execution_error"]
     trace = simulation_data["result"][0]["transaction_trace"]["execute_invocation"]
     if trace.get("revert_reason"):
         return trace.get("revert_reason")
-    info = extract_info(trace)
+    info = _extract_info(trace)
     parsed_info = []
     for i in info:
-        parsed_info.append(parse_info(i))
+        parsed_info.append(_parse_info(i))
     return parsed_info
 
 
