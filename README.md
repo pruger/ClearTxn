@@ -1,7 +1,10 @@
-# ClearTxn 🔎
+<div align="center">
+  <h1>ClearTxn 🔎</h1>
+</div>
+
 Transforms complex transaction data into clear, concise, and user-friendly information
 
-[Try it out](http://195.201.144.200:3000/)
+[Try it out](https://cleartxn.xyz/)
 
 ## Description
 
@@ -32,3 +35,6 @@ Finally, the backend sends this explanation back to the frontend, where it is di
 - `npm i`
 - `npm start`
 
+### Preview
+<img src="images/screenshot2.png" alt="Screen1" width="700"/>
+<img src="images/screenshot1.png" alt="Screen1" width="700"/>
