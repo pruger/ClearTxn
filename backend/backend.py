@@ -4,8 +4,8 @@ import chatgpt
 from flask_cors import CORS
 
 app = Flask(__name__)
-# CORS(app)
-CORS(app, resources={r"/simulate": {"origins": "https://cleartxn.xyz"}})
+CORS(app)
+# CORS(app, resources={r"/simulate": {"origins": "https://cleartxn.xyz"}})
 
 
 @app.route("/simulate", methods=["POST"])

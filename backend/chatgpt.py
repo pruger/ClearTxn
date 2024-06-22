@@ -7,11 +7,16 @@ def get_chatgpt_response(transaction_data, model="gpt-4"):
         "Authorization": f"Bearer {os.environ.get("OPENAI_API_KEY")}",
         "Content-Type": "application/json"
     }
-    prompt = f"""I did run a transaction on starknet. 
-    Can you give me a really short idea of what this transaction for example could have done with a concrete example. 
-    Keep your answer very short.
-    Do not explain the events in detail!
-    This is the output of the transaction:
+    prompt = f"""I did simulate a transaction on starknet.
+    Give me an overview of what this transaction would do if I were to execute it.
+    Do not go over each step individually but give me a short overview. 
+    If there was a transfer tell me how many tokens were transferred and to whom.
+    If there wan't a transfer just tell me no tokens have been transferred.
+    Don't tell me there was no transfer.
+    Give me an example in what context such a transaction might be executed.
+    Do not tell me to give you more information rather make an educated guess.
+
+    This is the output of the simulation:
     
     {transaction_data}
     """
@@ -21,7 +26,7 @@ def get_chatgpt_response(transaction_data, model="gpt-4"):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": str(prompt)}
         ],
-        "max_tokens": 150
+        "max_tokens": 600
     }
     
     response = requests.post(url, headers=headers, json=data)

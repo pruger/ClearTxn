@@ -181,7 +181,7 @@ def get_information(transaction):
 
 def main():
     # print(starknet_keccak('balanceOf'.encode()).hex())
-    for i in range(5, 6):
+    for i in range(1, 5):
         print("==================================================")
         print(i)
         with open(f"test_transactions/{i}.json", "r") as file:
