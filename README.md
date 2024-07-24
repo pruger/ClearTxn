@@ -1,10 +1,11 @@
-<div align="center">
-  <h1>ClearTxn 🔎</h1>
-</div>
+<h1>ClearTxn 🔎</h1>
+<h3>Created for EthGlobal Starkhack 2024</h3>
 
 Transforms complex transaction data into clear, concise, and user-friendly information
 
 [Try it out](https://cleartxn.xyz/)
+
+<img src="images/prizes_ctxn.png" alt="Prizes">
 
 ## Description
 
@@ -12,8 +13,8 @@ This project has a user-friendly interface that anyone can visit to input any tr
 
 ## Technical
 
-When a user inputs a transaction on the frontend, it is sent to the backend for processing. 
-The backend uses the starknet_simulateTransactions method to simulate the transaction. This simulation provides various useful data points, including the different function calls and any emitted events.
+When a user inputs a transaction on the frontend, it is sent to the backend for processing.
+The backend uses the starknet\_simulateTransactions method to simulate the transaction. This simulation provides various useful data points, including the different function calls and any emitted events.
 
 The backend extracts these function calls and events, then uses the Voyager API to fetch the ABIs (Application Binary Interfaces) for the class hashes. From these ABIs, it retrieves the function and event names. For certain events, additional information is extracted as well.
 
@@ -25,16 +26,17 @@ Finally, the backend sends this explanation back to the frontend, where it is di
 
 ### backend
 
-- install requirements.txt `pip3 install -r requirements.txt`
-- create .env from .env_template
-- `python3 backend.py`
+* install requirements.txt `pip3 install -r requirements.txt`
+* create .env from .env\_template
+* `python3 backend.py`
 
 ### backend
 
-- change config.ts to point to the backend
-- `npm i`
-- `npm start`
+* change config.ts to point to the backend
+* `npm i`
+* `npm start`
 
 ### Preview
-<img src="images/screenshot2.png" alt="Screen1" width="700"/>
-<img src="images/screenshot1.png" alt="Screen1" width="700"/>
+
+<img src="images/screenshot2.png" alt="Screen1">
+<img src="images/screenshot1.png" alt="Screen1">
